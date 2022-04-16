@@ -17,6 +17,7 @@ local.properties
 # Log/OS Files
 *.log
 *.apk
+*.aab
 output.json
 
 # IntelliJ
