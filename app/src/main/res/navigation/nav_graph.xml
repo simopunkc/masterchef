@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homepageMenuListFragment">
+
+    <fragment
+        android:id="@+id/homepageMenuListFragment"
+        android:name="com.pasuh.masterchef.view.HomepageMenuListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/homepage_menu_list_fragment">
+        <action
+            android:id="@+id/action_homepageMenuListFragment_to_ingredientListFragment"
+            app:destination="@id/ingredientListFragment" />
+        <action
+            android:id="@+id/action_homepageMenuListFragment_to_restockListFragment"
+            app:destination="@id/restockListFragment" />
+        <action
+            android:id="@+id/action_homepageMenuListFragment_to_menuListFragment"
+            app:destination="@id/menuListFragment" />
+        <action
+            android:id="@+id/action_homepageMenuListFragment_to_salesTransactionListFragment"
+            app:destination="@id/salesTransactionListFragment" />
+        <action
+            android:id="@+id/action_homepageMenuListFragment_to_profitListFragment"
+            app:destination="@id/profitListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ingredientListFragment"
+        android:name="com.pasuh.masterchef.view.v_ingredient_inventory.floor1.IngredientListFragment"
+        android:label="@string/menu_recipe_inventory"
+        tools:layout="@layout/ingredient_list_fragment">
+        <action
+            android:id="@+id/action_ingredientListFragment_to_ingredientDetailFragment"
+            app:destination="@id/ingredientDetailFragment" />
+        <action
+            android:id="@+id/action_ingredientListFragment_to_addIngredientFragment"
+            app:destination="@id/addIngredientFragment" />
+        <action
+            android:id="@+id/action_profitListFragment_to_homepageMenuListFragment"
+            app:destination="@id/homepageMenuListFragment"
+            app:popUpTo="@id/homepageMenuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientDetailFragment"
+        android:name="com.pasuh.masterchef.view.v_ingredient_inventory.floor2.IngredientDetailFragment"
+        android:label="@string/detail_fragment_title"
+        tools:layout="@layout/ingredient_detail_fragment">
+        <argument
+            android:name="recipe_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_ingredientDetailFragment_to_addRestockFragment"
+            app:destination="@id/addRestockFragment" />
+        <action
+            android:id="@+id/action_ingredientDetailFragment_to_addIngredientFragment"
+            app:destination="@id/addIngredientFragment" />
+        <action
+            android:id="@+id/action_ingredientDetailFragment_to_ingredientListFragment"
+            app:destination="@id/ingredientListFragment"
+            app:popUpTo="@id/ingredientListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addIngredientFragment"
+        android:name="com.pasuh.masterchef.view.v_ingredient_inventory.floor2.AddIngredientFragment"
+        android:label="{title}"
+        tools:layout="@layout/ingredient_add_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="recipe_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addIngredientFragment_to_ingredientDetailFragment"
+            app:destination="@id/ingredientDetailFragment" />
+        <action
+            android:id="@+id/action_addIngredientFragment_to_ingredientListFragment"
+            app:destination="@id/ingredientListFragment"
+            app:popUpTo="@id/ingredientListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRestockFragment"
+        android:name="com.pasuh.masterchef.view.v_ingredient_inventory.floor3.AddRestockFragment"
+        android:label="{title}"
+        tools:layout="@layout/restock_add_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="recipe_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addRestockFragment_to_ingredientDetailFragment"
+            app:destination="@id/ingredientDetailFragment"
+            app:popUpTo="@id/ingredientDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/restockListFragment"
+        android:name="com.pasuh.masterchef.view.v_restock_history.floor1.RestockListFragment"
+        android:label="@string/menu_restock_history"
+        tools:layout="@layout/restock_list_fragment">
+        <action
+            android:id="@+id/action_restockListFragment_to_restockDetailFragment"
+            app:destination="@id/restockDetailFragment" />
+        <action
+            android:id="@+id/action_restockListFragment_to_homepageMenuListFragment"
+            app:destination="@id/homepageMenuListFragment"
+            app:popUpTo="@id/homepageMenuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/restockDetailFragment"
+        android:name="com.pasuh.masterchef.view.v_restock_history.floor2.RestockDetailFragment"
+        android:label="@string/detail_fragment_title"
+        tools:layout="@layout/restock_detail_fragment">
+        <argument
+            android:name="restock_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_restockDetailFragment_to_restockListFragment"
+            app:destination="@id/restockListFragment"
+            app:popUpTo="@id/restockListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuListFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor1.MenuListFragment"
+        android:label="@string/menu_inventory"
+        tools:layout="@layout/menu_list_fragment">
+        <action
+            android:id="@+id/action_menuListFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment" />
+        <action
+            android:id="@+id/action_menuListFragment_to_addMenuFragment"
+            app:destination="@id/addMenuFragment" />
+        <action
+            android:id="@+id/action_menuListFragment_to_homepageMenuListFragment"
+            app:destination="@id/homepageMenuListFragment"
+            app:popUpTo="@id/homepageMenuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuDetailFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor2.MenuDetailFragment"
+        android:label="@string/detail_fragment_title"
+        tools:layout="@layout/menu_detail_fragment">
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_menuDetailFragment_to_addMenuFragment"
+            app:destination="@id/addMenuFragment" />
+        <action
+            android:id="@+id/action_menuDetailFragment_to_dropdownListFragment"
+            app:destination="@id/dropdownListFragment" />
+        <action
+            android:id="@+id/action_menuDetailFragment_to_menuIngredientDetailFragment"
+            app:destination="@id/menuIngredientDetailFragment" />
+        <action
+            android:id="@+id/action_menuDetailFragment_to_sellMenuFragment"
+            app:destination="@id/sellMenuFragment" />
+        <action
+            android:id="@+id/action_menuDetailFragment_to_menuListFragment"
+            app:destination="@id/menuListFragment"
+            app:popUpTo="@id/menuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMenuFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor2.AddMenuFragment"
+        android:label="{title}"
+        tools:layout="@layout/menu_add_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addMenuFragment_to_menuListFragment"
+            app:destination="@id/menuListFragment"
+            app:popUpTo="@id/menuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellMenuFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor3.SellMenuFragment"
+        android:label="{title}"
+        tools:layout="@layout/menu_sell_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_sellMenuFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment"
+            app:popUpTo="@id/menuDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dropdownListFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor3.MenuDropdownIngredientListFragment"
+        android:label="{title}"
+        tools:layout="@layout/menu_dropdown_ingredient_list_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_dropdownListFragment_to_addMenuIngredientFragment"
+            app:destination="@id/addMenuIngredientFragment" />
+        <action
+            android:id="@+id/action_dropdownListFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment"
+            app:popUpTo="@id/menuDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuIngredientDetailFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor3.MenuIngredientDetailFragment"
+        android:label="@string/detail_fragment_title"
+        tools:layout="@layout/menu_ingredient_detail_fragment">
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <argument
+            android:name="recipe_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_menuIngredientDetailFragment_to_addMenuIngredientFragment"
+            app:destination="@id/addMenuIngredientFragment" />
+        <action
+            android:id="@+id/action_menuIngredientDetailFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment"
+            app:popUpTo="@id/menuDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMenuIngredientFragment"
+        android:name="com.pasuh.masterchef.view.v_menu_inventory.floor4.AddMenuIngredientFragment"
+        android:label="{title}"
+        tools:layout="@layout/menu_ingredient_add_fragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="recipe_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="ingredient_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addMenuIngredientFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment"
+            app:popUpTo="@id/menuDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/salesTransactionListFragment"
+        android:name="com.pasuh.masterchef.view.v_sales_transaction_history.floor1.SalesTransactionListFragment"
+        android:label="@string/menu_transaction_history"
+        tools:layout="@layout/sales_transaction_list_fragment">
+        <action
+            android:id="@+id/action_salesTransactionListFragment_to_salesTransactionDetailFragment"
+            app:destination="@id/salesTransactionDetailFragment" />
+        <action
+            android:id="@+id/action_salesTransactionListFragment_to_homepageMenuListFragment"
+            app:destination="@id/homepageMenuListFragment"
+            app:popUpTo="@id/homepageMenuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/salesTransactionDetailFragment"
+        android:name="com.pasuh.masterchef.view.v_sales_transaction_history.floor2.SalesTransactionDetailFragment"
+        android:label="@string/detail_fragment_title"
+        tools:layout="@layout/sales_transaction_detail_fragment">
+        <argument
+            android:name="transaksi_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_salesTransactionDetailFragment_to_salesTransactionListFragment"
+            app:destination="@id/salesTransactionListFragment"
+            app:popUpTo="@id/salesTransactionListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profitListFragment"
+        android:name="com.pasuh.masterchef.view.v_maximum_profit.floor1.ProfitListFragment"
+        android:label="@string/menu_max_profit"
+        tools:layout="@layout/profit_list_fragment">
+        <action
+            android:id="@+id/action_profitListFragment_to_homepageMenuListFragment"
+            app:destination="@id/homepageMenuListFragment"
+            app:popUpTo="@id/homepageMenuListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

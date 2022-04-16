@@ -1,0 +1,101 @@
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Masterchef</string>
+
+    // homepage
+    <string name="menu_recipe_inventory">Ingredient Inventory</string>
+    <string name="desc_recipe_inventory">Managing ingredients in the restaurant</string>
+    <string name="menu_restock_history">Restock Ingredient History</string>
+    <string name="desc_restock_history">A list of history of adding stock of cooking ingredients</string>
+    <string name="menu_inventory">Cooking Menu List</string>
+    <string name="desc_inventory">Manage menu list in restaurant</string>
+    <string name="menu_transaction_history">Sales History</string>
+    <string name="desc_transaction_history">List of all history menus that were successfully sold</string>
+    <string name="menu_max_profit">Max Profit Calculator</string>
+    <string name="desc_max_profit">Calculate the biggest profit based on the stock of ingredients</string>
+
+    // ingredient
+    <string name="recipe">Ingredient Name</string>
+    <string name="add_new_recipe">Add new recipe</string>
+    <string name="edit_recipe">Edit ingredient</string>
+    <string name="id_recipe">ID</string>
+    <string name="recipe_req">Ingredient Name <font color='#FF0000'>*</font></string>
+    <string name="quantity_req">Quantity in Stock <font color='#FF0000'>*</font></string>
+    <string name="increase_stock">Increase Stock</string>
+    <string name="detail_recipe_name">Ingredient Name: %s</string>
+    <string name="detail_recipe_quantity">Quantity in Stock: %s</string>
+    <string name="restock_history_name">Restock Ingredient: %s</string>
+    <string name="restock_history_quantity">Restock Quantity: %s</string>
+    <string name="restock_history_date">Restock Date: %s</string>
+    <string name="restock_history_time">Restock Time: %s</string>
+
+    // transaction
+    <string name="date">Date</string>
+    <string name="quantity">Quantity</string>
+    <string name="quantity_in_stock">Quantity in Stock</string>
+    <string name="item">Item</string>
+    <string name="detail_sales_transaction_name">Transaction Menu Name: %s</string>
+    <string name="detail_sales_transaction_quantity">Transaction Quantity: %s</string>
+    <string name="detail_sales_transaction_date">Transaction Date: %s</string>
+    <string name="detail_sales_transaction_time">Transaction Time: %s</string>
+
+    // menu
+    <string name="choose_recipe">Choose ingredient</string>
+    <string name="price">Price</string>
+    <string name="edit_menu">Edit menu</string>
+    <string name="add_menuingredient">Add ingredient</string>
+    <string name="edit_menuingredient">Edit ingredient</string>
+    <string name="add_new_item">Add new menu</string>
+    <string name="sell">Sell</string>
+    <string name="item_name_req">Menu Name <font color='#FF0000'>*</font></string>
+    <string name="item_price_req">Menu Price <font color='#FF0000'>*</font></string>
+    <string name="detail_menu_name">Menu Name: %s</string>
+    <string name="detail_menu_price">Price: %s</string>
+    <string name="detail_menuingredient_quantity">Ingredient quantity: %s</string>
+    <string name="detail_menuingredient_updated">Ingredient updated: %s</string>
+    <string name="menu_ingredient_stock">Stock: %s</string>
+    <string name="menu_ingredient_id">ID: %s</string>
+    <string name="menu_ingredient_quantity">Quantity: %s</string>
+    <string name="menu_edit">Edit</string>
+
+    // profit
+    <string name="min_menu">Minimum Menu <font color='#FF0000'>*</font></string>
+    <string name="max_menu">Maximum Menu <font color='#FF0000'>*</font></string>
+    <string name="list_menu">Menu</string>
+    <string name="list_stock">Stock</string>
+    <string name="total_profit">Profit</string>
+    <string name="detail_max_profit">Max Profit: %s</string>
+
+    // action
+    <string name="save_action">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="calculate">Calculate</string>
+    <string name="delete_question">Are you sure you want to delete?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+
+    // fragment
+    <string name="add_fragment_title">Add Item</string>
+    <string name="edit_fragment_title">Edit Item</string>
+    <string name="detail_fragment_title">Item Detail</string>
+    <string name="currency_symbol">$</string>
+    <string name="empty">Empty</string>
+    <string name="empty_recipe">Empty Recipe</string>
+    <string name="empty_menu">Menus and recipes are still empty</string>
+
+</resources>

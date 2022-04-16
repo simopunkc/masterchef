@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2020 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for starting a new order -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.HomepageMenuListFragment">
+
+    <ScrollView
+        android:id="@+id/scrollview_homepage_menu_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuRecipeInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="false"
+                android:enabled="false"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/box_color_top1"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:id="@+id/food_potians_feast"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:padding="@dimen/margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/red_700"
+                        app:srcCompat="@drawable/food_potians_feast" />
+
+                    <TextView
+                        android:id="@+id/title_menu_recipe_inventory"
+                        style="@style/Widget.Masterchef.HompageMenuTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:fontFamily=""
+                        android:text="@string/menu_recipe_inventory"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/food_potians_feast" />
+
+                    <TextView
+                        android:id="@+id/desc_recipe_inventory"
+                        style="@style/Widget.Masterchef.HompageMenuDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/desc_recipe_inventory"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_menu_recipe_inventory" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuRestockHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="false"
+                android:enabled="false"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/box_color_top1"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:id="@+id/food_snack_pack"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:background="@color/teal_200"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/food_snack_pack" />
+
+                    <TextView
+                        android:id="@+id/title_menu_restock_history"
+                        style="@style/Widget.Masterchef.HompageMenuTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/menu_restock_history"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/food_snack_pack" />
+
+                    <TextView
+                        android:id="@+id/desc_restock_history"
+                        style="@style/Widget.Masterchef.HompageMenuDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/desc_restock_history"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_menu_restock_history" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="false"
+                android:enabled="false"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/box_color_top1"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:id="@+id/doghnout"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/purple_200"
+                        app:srcCompat="@drawable/doghnout" />
+
+                    <TextView
+                        android:id="@+id/title_menu_inventory"
+                        style="@style/Widget.Masterchef.HompageMenuTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/menu_inventory"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/doghnout" />
+
+                    <TextView
+                        android:id="@+id/desc_inventory"
+                        style="@style/Widget.Masterchef.HompageMenuDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/desc_inventory"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_menu_inventory" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuTransactionHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="false"
+                android:enabled="false"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/box_color_top1"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:id="@+id/food_sammich"
+                        android:importantForAccessibility="no"
+                        android:background="@color/teal_700"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/food_sammich" />
+
+                    <TextView
+                        android:id="@+id/title_menu_transaction_history"
+                        style="@style/Widget.Masterchef.HompageMenuTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/menu_transaction_history"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/food_sammich" />
+
+                    <TextView
+                        android:id="@+id/desc_transaction_history"
+                        style="@style/Widget.Masterchef.HompageMenuDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/desc_transaction_history"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_menu_transaction_history" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuMaxProfit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:checkable="false"
+                android:enabled="false"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/box_color_top1"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:id="@+id/calculator"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:background="@color/purple_700"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/calculator" />
+
+                    <TextView
+                        android:id="@+id/title_menu_max_profit"
+                        style="@style/Widget.Masterchef.HompageMenuTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="@string/menu_max_profit"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/calculator" />
+
+                    <TextView
+                        android:id="@+id/desc_max_profit"
+                        style="@style/Widget.Masterchef.HompageMenuDescTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/desc_max_profit"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_menu_max_profit" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
